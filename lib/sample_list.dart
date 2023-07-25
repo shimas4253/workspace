@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:workspace/screen2.dart';
 
 class samlelistview extends StatefulWidget {
   const samlelistview({Key? key}) : super(key: key);
@@ -16,8 +17,14 @@ class _samlelistviewState extends State<samlelistview> {
       body: ListView.separated(
           itemBuilder: (ctx, index) {
             return ListTile(
-              title: Text('Person'),
-              subtitle: Text('lats message $index'),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => screenTwo(
+                         //name: 'Person $index',
+                        )));
+              },
+              title: Text('Person $index'),
+              subtitle: Text('last message $index'),
               leading: CircleAvatar(
                 backgroundImage: NetworkImage(
                     'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?cs=srgb&dl=pexels-mohamed-abdelghaffar-771742.jpg&fm=jpg'),
